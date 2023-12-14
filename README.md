@@ -20,10 +20,10 @@ python str2dtmf.py <sequence_of_digits> --duration <tone_duration_ms> --silence-
 ## Configuration
 Adjustable parameters in the script:
 
---duration: Duration of each DTMF tone. *(default: 500 ms)* <br>
---silence-duration: Duration of silence between tones. *(default: 25 ms)* <br>
---sample-rate: Sample rate for audio generation. *(default: 8000 hz)* <br>
---output-file: Output file name for WAV file generation. *(default: "output.wav")* <br>
+--duration <int>: Duration (in ms) of each DTMF tone. *(default: 500 ms)* <br>
+--silence-duration <int>: Duration (in ms) of silence between tones. *(default: 25 ms)* <br>
+--sample-rate <int>: Sample rate (in Hz) for audio generation. *(default: 8000 hz)* <br>
+--output-file <filename>: Output file name for WAV file generation. *(default: "output.wav")* <br>
 --stereo: Flag for generating stereo audio instead of mono. <br>
 --pcm8: Flag for generating audio on PCM-8 bit instead of PCM-16. <br>
 ~~--i2s: Flag for playing through I2S interface.~~ (**still in progress**) <br>
