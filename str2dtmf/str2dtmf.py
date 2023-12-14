@@ -53,7 +53,7 @@ def generate_dtmf_tones(input_string, duration=500, sample_rate=8000, silence_du
 
     return data
 
-def save_wave_file(data, filename="output.wav", sample_rate=22050, stereo=False):
+def save_wave_file(data, filename="output.wav", sample_rate=8000, stereo=False):
     '''
         Save the content in .wav file the content generate by generate_dtmf_tones() 
     '''
