@@ -1,0 +1,53 @@
+#!/usr/bin/env python3
+
+import sys
+import argparse
+from pkg_str2dtmf.dtmf import DTMF
+
+def main():
+    '''
+        Argument parsing with argparse and main job
+    '''
+    parser = argparse.ArgumentParser(description='Prove of concept for Arcturus project')
+    parser.add_argument(
+        'dtmf', 
+        type=str,
+        help='Sequence of digits to generate preamble DTMF tones.'
+    )
+    
+    parser.add_argument(
+        '--output-file',
+        type=str,
+        default='output.wav',
+        help='Output file name for WAV file generation. (default: \"output.wav\")'
+)
+
+    parser.add_argument(
+        '--dtmf-duration', 
+        type=int, 
+        default=500, 
+        help='Duration of each tone in milliseconds (default: 500).'
+    )
+    
+    parser.add_argument(
+        '--dtmf-silence-duration', 
+        type=int, 
+        default=25, 
+        help='Duration of silence between tones in milliseconds (default: 25).'
+    )
+    
+    parser.add_argument(
+        '--dtmf-sample-rate', 
+        type=int, 
+        default=8000, 
+        help='Sample rate in Hz (default: 8000).'
+    )
+    args = parser.parse_args()
+
+    dtmf_o = DTMF(duration=args.dtmf_duration, silence_duration=args.dtmf_silence_duration,
+                    sample_rate=args.dtmf_sample_rate)
+    dtmf_o.generate_dtmf_tones(args.dtmf)
+    dtmf_o.save_wave_file(filename=args.output_file)
+
+if __name__ == "__main__":
+    sys.exit(main())

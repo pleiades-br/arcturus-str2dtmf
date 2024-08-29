@@ -3,7 +3,7 @@ import os
 import numpy as np
 import wave
 
-from str2dtmf import generate_dtmf_tones, save_wave_file, dtmf_frequencies
+from pkg_str2dtmf import generate_dtmf_tones, save_wave_file, dtmf_frequencies
 
 class TestDTMFGenerator(unittest.TestCase):
     def test_generate_dtmf_tones(self):

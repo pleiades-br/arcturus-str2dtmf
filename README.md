@@ -2,11 +2,11 @@
 
 ## Overview
 
-This Python script generates DTMF (Dual-Tone Multi-Frequency) tones and allows users to save the audio either to a WAV file or ~~play it through an I2S interface~~ (**still in progress**). DTMF tones are commonly used in telephony for dialing on a telephone keypad.
+This Python script generates DTMF (Dual-Tone Multi-Frequency) tones and allows users to save the audio either to a WAV file o DTMF tones are commonly used in telephony for dialing on a telephone keypad.
 
 ## Features
 - Generate DTMF tones for a sequence of digits.
-- Option to save the tones to a WAV file or play them through an I2S interface.
+- Option to save the tones to a WAV file.
 - Adjustable parameters such as tone duration, silence duration, sample rate, and mono/stereo output.
 
 ## Usage
@@ -20,14 +20,10 @@ python str2dtmf.py <sequence_of_digits> --duration <tone_duration_ms> --silence-
 ## Configuration
 Adjustable parameters in the script:
 
---duration: Duration of each DTMF tone. *(default: 500 ms)* <br>
---silence-duration: Duration of silence between tones. *(default: 25 ms)* <br>
---sample-rate: Sample rate for audio generation. *(default: 8000 hz)* <br>
 --output-file: Output file name for WAV file generation. *(default: "output.wav")* <br>
---stereo: Flag for generating stereo audio instead of mono. <br>
---pcm8: Flag for generating audio on PCM-8 bit instead of PCM-16. <br>
-~~--i2s: Flag for playing through I2S interface.~~ (**still in progress**) <br>
-
+--dtmf-duration: Duration of each DTMF tone. *(default: 500 ms)* <br>
+--dtmf-silence-duration: Duration of silence between tones. *(default: 25 ms)* <br>
+--dtmf-sample-rate: Sample rate for audio generation. *(default: 8000 hz)* <br>
 
 ## Testing
 The script includes unit tests to ensure the correctness of the DTMF tone generation and WAV file saving. Run the tests using:
