@@ -20,7 +20,7 @@ def main():
         type=str,
         default='output.wav',
         help='Output file name for WAV file generation. (default: \"output.wav\")'
-)
+    )
 
     parser.add_argument(
         '--dtmf-duration', 
